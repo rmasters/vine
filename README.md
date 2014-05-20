@@ -4,20 +4,22 @@ PHP wrapper around the unreleased Vine API.
 
 ## Usage
 
-    $vine = new Vine;
-    $popular = $vine->popularTimeline();
-    foreach ($popular['data']['records'] as $vine) {
-        echo sprintf('<video src="%s"></video>', $vine['videoUrl']);
-    }
+```php
+$vine = new Vine;
+$popular = $vine->popularTimeline();
+foreach ($popular['data']['records'] as $vine) {
+    echo sprintf('<video src="%s"></video>', $vine['videoUrl']);
+}
 
-    $fromUser = $vine->userTimeline(123456789);
-    $tagged = $vine->tagTimeline('Webbys');
+$fromUser = $vine->userTimeline(123456789);
+$tagged = $vine->tagTimeline('Webbys');
+```
 
 ## Roadmap
 
-[x]  Implement endpoints that don't require authentication (termed as 'public')
-[ ]  Create models for response types,
-[ ]  Implement authorised endpoints (much prefer to wait for a public API).
+- [x] Implement endpoints that don't require authentication (termed as 'public')
+- [ ] Create models for response types,
+- [ ] Implement authorised endpoints (much prefer to wait for a public API).
 
 ## Caveats
 
